@@ -34,7 +34,7 @@
 		"test:banner": "node ./scripts/print-tests-top-banner.js",
 		"test:docs": "npx babel-node ./tests/component-docs-test.js",
 		"test:fix": "npm run lint:fix && npm run test",
-		"test:unit": "cross-env NODE_ENV=mochatest npx karma start --single-run",
+		"test:unit": "cross-env NODE_ENV=mochatest NODE_OPTIONS=--openssl-legacy-provider npx karma start --single-run",
 		"test:stories": "npm run test:dom-snapshot && npm run test:accessibility",
 		"test:dom-snapshot": "cross-env NODE_ENV=test npx jest --runInBand --config=tests/story-based-tests.dom-snapshot-test.config.json",
 		"test:image-snapshot": "cross-env NODE_ENV=test npx jest --runInBand --config=tests/story-based-tests.snapshot-test.config.json",
