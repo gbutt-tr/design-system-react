@@ -4,13 +4,13 @@
 // # Tree Branch Component
 import React from 'react';
 import PropTypes from 'prop-types';
-import shortid from 'shortid';
 
 // Child components
 import Item from './item';
 import RenderInitialBranch from './render-initial-branch';
 import RenderBranch from './render-branch';
 
+import { generateShortId } from '../../utilities/id-generator';
 import { TREE_BRANCH } from '../../../utilities/constants';
 
 /**
@@ -58,7 +58,7 @@ const Branch = (props) => {
 					<Item
 						label={node.label}
 						htmlId={htmlId}
-						key={shortid.generate()}
+						key={generateShortId()}
 						level={level + 1}
 						node={node}
 						flattenedNodes={props.flattenedNodes}

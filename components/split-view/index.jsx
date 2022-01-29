@@ -3,11 +3,11 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import shortid from 'shortid';
 import classNames from 'classnames';
 
 import ToggleButton, { TOGGLE_BUTTON_WIDTH } from './private/toggle-button';
 
+import { generateShortId } from '../utilities/id-generator';
 import { SPLIT_VIEW } from '../../utilities/constants';
 
 const propTypes = {
@@ -93,7 +93,7 @@ class SplitView extends React.Component {
 			isOpen: typeof props.isOpen === 'boolean' ? props.isOpen : true,
 		};
 
-		this.generatedId = shortid.generate();
+		this.generatedId = generateShortId();
 	}
 
 	getId() {

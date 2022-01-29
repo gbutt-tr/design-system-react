@@ -5,10 +5,7 @@
 // Based on SLDS v2.4.0
 import React from 'react';
 import PropTypes from 'prop-types';
-// ### shortid
-// [npmjs.com/package/shortid](https://www.npmjs.com/package/shortid)
-// shortid is a short, non-sequential, url-friendly, unique id generator
-import shortid from 'shortid';
+import { generateShortId } from '../utilities/id-generator';
 
 import Icon from '../icon';
 
@@ -62,7 +59,7 @@ class InfoBadge extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.generatedId = shortid.generate();
+		this.generatedId = generateShortId();
 	}
 
 	/**

@@ -6,10 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-// ### shortid
-// [npmjs.com/package/shortid](https://www.npmjs.com/package/shortid)
-// shortid is a short, non-sequential, url-friendly, unique id generator
-import shortid from 'shortid';
+import { generateShortId } from '../utilities/id-generator';
 
 import Icon from '../icon';
 import { LOCATION_MAP } from '../../utilities/constants';
@@ -102,7 +99,7 @@ const defaultProps = {
 class LocationMap extends React.Component {
 	constructor(props) {
 		super(props);
-		this.generatedId = shortid.generate();
+		this.generatedId = generateShortId();
 	}
 
 	/**

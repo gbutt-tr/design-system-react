@@ -6,16 +6,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-// ### shortid
-// [npmjs.com/package/shortid](https://www.npmjs.com/package/shortid)
-// shortid is a short, non-sequential, url-friendly, unique id generator
-import shortid from 'shortid';
 
 import assign from 'lodash.assign';
 
 import Modal from '../modal';
 import ProgressBar from '../progress-bar';
 
+import { generateShortId } from '../utilities/id-generator';
 import { WELCOME_MAT } from '../../utilities/constants';
 
 const displayName = WELCOME_MAT;
@@ -91,7 +88,7 @@ class WelcomeMat extends React.Component {
 	constructor(props) {
 		super(props);
 
-		this.generatedId = shortid.generate();
+		this.generatedId = generateShortId();
 		this.getCount();
 	}
 

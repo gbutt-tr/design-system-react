@@ -9,7 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
-import shortid from 'shortid';
+import { generateShortId } from '../utilities/id-generator';
 
 import Button from '../button';
 
@@ -74,7 +74,7 @@ const defaultProps = {
 class ExpandableSection extends React.Component {
 	constructor(props) {
 		super(props);
-		this.generatedId = shortid.generate();
+		this.generatedId = generateShortId();
 		this.state = {
 			isOpen: true,
 		};

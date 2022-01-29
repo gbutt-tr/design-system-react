@@ -9,10 +9,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-// ### shortid
-// [npmjs.com/package/shortid](https://www.npmjs.com/package/shortid)
-// shortid is a short, non-sequential, url-friendly, unique id generator
-import shortid from 'shortid';
+import { generateShortId } from '../utilities/id-generator';
 
 import { CAROUSEL } from '../../utilities/constants';
 
@@ -151,7 +148,7 @@ class Carousel extends React.Component {
 			translateX: -1000000,
 		};
 
-		this.generatedId = shortid.generate();
+		this.generatedId = generateShortId();
 	}
 
 	componentDidMount() {

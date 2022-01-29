@@ -16,7 +16,7 @@ import isFunction from 'lodash.isfunction';
 
 import classNames from 'classnames';
 
-import shortid from 'shortid';
+import { generateShortId } from '../utilities/id-generator';
 
 import Button from '../button';
 import Dialog from '../utilities/dialog';
@@ -443,8 +443,8 @@ class Combobox extends React.Component {
 		// `checkProps` issues warnings to developers about properties (similar to React's built in development tools)
 		checkProps(COMBOBOX, props, componentDoc);
 
-		this.generatedId = shortid.generate();
-		this.generatedErrorId = shortid.generate();
+		this.generatedId = generateShortId();
+		this.generatedErrorId = generateShortId();
 		this.deselectId = `${this.getId()}-deselect`;
 	}
 

@@ -25,10 +25,7 @@ import isFunction from 'lodash.isfunction';
 // joining classNames together."
 import classNames from 'classnames';
 
-// ### shortid
-// [npmjs.com/package/shortid](https://www.npmjs.com/package/shortid)
-// shortid is a short, non-sequential, url-friendly, unique id generator
-import shortid from 'shortid';
+import { generateShortId } from '../utilities/id-generator';
 
 // This component's `checkProps` which issues warnings to developers about properties
 // when in development mode (similar to React's built in development tools)
@@ -200,9 +197,9 @@ const MenuPicklist = createReactClass({
 		// `checkProps` issues warnings to developers about properties (similar to React's built in development tools)
 		checkProps(MENU_PICKLIST, this.props);
 
-		this.generatedId = shortid.generate();
+		this.generatedId = generateShortId();
 		if (this.props.errorText) {
-			this.generatedErrorId = shortid.generate();
+			this.generatedErrorId = generateShortId();
 		}
 
 		if (typeof window !== 'undefined') {

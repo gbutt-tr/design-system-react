@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import isFunction from 'lodash.isfunction';
-import shortid from 'shortid';
+import { generateShortId } from '../utilities/id-generator';
 
 // This component's `checkProps` which issues warnings to developers about properties when in development mode (similar to React's built in development tools)
 import checkProps from './check-props';
@@ -127,7 +127,7 @@ class AppLauncher extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.generatedId = shortid.generate();
+		this.generatedId = generateShortId();
 		this.state = {
 			isOpen: false,
 		};

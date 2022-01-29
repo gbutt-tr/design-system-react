@@ -1,12 +1,12 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import shortid from 'shortid';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import IconSettings from '../../icon-settings';
 
 import { CARD } from '../../../utilities/constants';
+import { generateShortId } from '../../utilities/id-generator';
 import Button from '../../button';
 import Card from '../../card';
 import CardEmpty from '../../card/empty';
@@ -69,7 +69,7 @@ class DemoCard extends React.Component {
 		this.setState({
 			items: [
 				// eslint-disable-next-line no-plusplus
-				{ id: currentId++, name: `New item #${shortid.generate()}` },
+				{ id: currentId++, name: `New item #${generateShortId()}` },
 				...this.state.items,
 			],
 		});

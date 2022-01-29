@@ -8,10 +8,7 @@ import classNames from 'classnames';
 import assign from 'lodash.assign';
 import ContentEditable from 'react-contenteditable';
 
-// ### shortid
-// [npmjs.com/package/shortid](https://www.npmjs.com/package/shortid)
-// shortid is a short, non-sequential, url-friendly, unique id generator
-import shortid from 'shortid';
+import { generateShortId } from '../utilities/id-generator';
 
 import { EXPRESSION_FORMULA } from '../../utilities/constants';
 
@@ -95,7 +92,7 @@ class ExpressionFormula extends React.Component {
 		this.state = {
 			textEditorValue: 'Compose formula...', // default is set here to preserve functionality if not controlled by props.textEditorValue
 		};
-		this.generatedId = shortid.generate();
+		this.generatedId = generateShortId();
 	}
 
 	/**

@@ -8,10 +8,7 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
-// ### shortid
-// [npmjs.com/package/shortid](https://www.npmjs.com/package/shortid)
-// shortid is a short, non-sequential, url-friendly, unique id generator
-import shortid from 'shortid';
+import { generateShortId } from '../utilities/id-generator';
 
 import EventUtil from '../../utilities/event';
 import { POPOVER_TOOLTIP } from '../../utilities/constants';
@@ -180,7 +177,7 @@ class Tooltip extends React.Component {
 		// `checkProps` issues warnings to developers about properties (similar to React's built in development tools)
 		checkProps(POPOVER_TOOLTIP, props, componentDoc);
 
-		this.generatedId = shortid.generate();
+		this.generatedId = generateShortId();
 	}
 
 	componentWillUnmount() {
